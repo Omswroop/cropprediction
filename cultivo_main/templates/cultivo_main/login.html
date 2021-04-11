@@ -1,0 +1,52 @@
+{% extends 'cultivo_main/main_head.html' %}
+
+{% block content %}
+{% load static %}
+
+
+<body>
+<main>
+  <div class="login-wrap" style="height:500px;">
+    <div class="login-html">
+        <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Login!</label>
+        <!-- <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label> -->
+       <center><h1><em>User Login Form</em></h1></center>
+        <form id="form" name="sendreq" action="login1" method='post'>
+        {% csrf_token %}
+        <div class="login-form">
+            <div class="sign-in-htm">
+                <div class="group">
+                    <label for="user" class="label">UserId <span style="font-size: 12px;">(Username)</span></label>
+                     <input type="text" placeholder="Enter ID" class="input" name="username" required>
+                </div>
+                <div class="group">
+                    <label for="pass" class="label">Password</label>
+                    <input type="password" placeholder="Enter Password" class="input" name="password" required>
+                </div>
+
+                <div class="group">
+                    <input type="submit" class="button"  value="Go">
+                </div>
+                <div class="hr"  style='margin-top:-1%;'></div>
+
+            </div>
+            </div></form>
+            </div></div>
+
+
+
+
+
+ <marquee><h3>{{message}}</h3></marquee>
+  </div>
+<div style="float:right;" class="container">
+
+    <p>Don't have an account? <a href="register"><b>Sign up</b></a>.</p>
+  </div>
+
+
+
+
+
+
+{% endblock %}

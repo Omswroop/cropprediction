@@ -1,0 +1,79 @@
+{% extends 'cultivo_main/main_head.html' %}
+
+{% block content %}
+
+
+<div class="login-wrap" style=" height:1000px;">
+    <div class="login-html">
+        <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Register Here</label>
+        <a href="{% url 'login' %}"><b>Sign in? </b></a>
+        <!-- <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label> -->
+        <form id="form" name="sendreq" action='{% url 'index' %}' method='post'>
+        {% csrf_token %}
+        <div class="login-form" >
+            <div class="sign-in-htm" style="height=500px;">
+                <div class="group">
+                    <label for="user" class="label">User Email <span style="font-size: 12px;"></span></label>
+                    {{form1.email}}
+                </div>
+                <div class="group">
+                    <label for="pass" class="label">Password</label>
+                   {{form1.password}}
+                </div>
+
+                 <div class="group">
+                    <label for="pass" class="label">Username</label>
+                   {{form1.username}}
+                </div>
+
+                <div class="group">
+                    <label for="pass" class="label">Authid</label>
+                   {{form1.authid}}
+                </div>
+
+                 <div class="group">
+                    <label for="pass" class="label">Dept</label>
+                   {{form1.department}}
+                </div>
+
+                <div class="group">
+                    <label for="pass" class="label">Pancard</label>
+                   {{form1.Pancard}}
+                </div>
+
+
+                 <div class="group">
+                    <label for="pass" class="label">Crop</label>
+                   {{form1.crop}}
+                </div>
+
+                <div class="group">
+                    <label for="pass" class="label">Address</label>
+                   {{form1.Address}}
+                </div>
+
+
+                <div class="group">
+                    <label for="pass" class="label">Gender</label>
+                   {{form1.Gender}}
+                </div>
+
+
+                 <div class="group">
+                    <label for="pass" class="label">Phone</label>
+                   {{form1.phone}}
+                </div>
+
+
+                <div class="group">
+                    <input type="submit" class="button" value="Register">
+                </div>
+                <div class="hr"  style='margin-top:-1%;'></div>
+                
+            </div>
+            </div></form>
+            </div></div>
+
+
+
+{% endblock %}

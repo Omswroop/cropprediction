@@ -1,0 +1,38 @@
+{% extends 'cultivo_main/main_head.html' %}
+
+{% block content %}
+
+
+<div class="login-wrap" >
+    <div class="login-html">
+        <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Login Here</label>
+        <a href="{% url 'index' %}"><b>New Here?Register  </b></a>
+        <!-- <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label> -->
+        <form id="form" name="sendreq" action='{% url 'login' %}' method='post'>
+        {% csrf_token %}
+        <div class="login-form" >
+            <div class="sign-in-htm" style="height=500px;">
+                <div class="group">
+                    <label for="user" class="label">User Email <span style="font-size: 12px;"></span></label>
+                    {{form2.email}}
+                </div>
+                <div class="group">
+                    <label for="pass" class="label">Password</label>
+                   {{form2.password}}
+                </div>
+
+
+                <div class="group">
+                    <input type="submit" class="button" value="Login">
+
+                </div>
+                <div class="hr"  style='margin-top:-1%;'></div>
+
+
+            </div>
+            </div></form>
+            </div></div>
+
+
+
+{% endblock %}
